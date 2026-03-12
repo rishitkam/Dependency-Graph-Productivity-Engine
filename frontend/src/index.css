@@ -1,0 +1,212 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    color-scheme: dark;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #080a12;
+    color: #f1f5f9;
+    font-family: 'DM Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    overflow: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #2a2f45;
+    border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #3d4461;
+}
+
+.note-textarea {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9375rem;
+    line-height: 1.75;
+    resize: none;
+    outline: none;
+    background: transparent;
+    color: #cbd5e1;
+    width: 100%;
+    height: 100%;
+    border: none;
+    padding: 0;
+}
+
+.note-textarea::placeholder {
+    color: #374151;
+}
+
+.graph-tooltip {
+    position: absolute;
+    background: #141720;
+    border: 1px solid #2a2f45;
+    border-radius: 8px;
+    padding: 10px 14px;
+    pointer-events: none;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8rem;
+    color: #cbd5e1;
+    max-width: 220px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+    z-index: 100;
+    opacity: 0;
+    transition: opacity 0.15s ease;
+}
+
+.graph-tooltip.visible {
+    opacity: 1;
+}
+
+.cat-technology {
+    background: rgba(99, 102, 241, 0.15);
+    color: #818cf8;
+    border-color: rgba(99, 102, 241, 0.3);
+}
+
+.cat-idea {
+    background: rgba(34, 211, 238, 0.12);
+    color: #22d3ee;
+    border-color: rgba(34, 211, 238, 0.3);
+}
+
+.cat-person {
+    background: rgba(249, 115, 22, 0.12);
+    color: #fb923c;
+    border-color: rgba(249, 115, 22, 0.3);
+}
+
+.cat-method {
+    background: rgba(16, 185, 129, 0.12);
+    color: #34d399;
+    border-color: rgba(16, 185, 129, 0.3);
+}
+
+.cat-place {
+    background: rgba(245, 158, 11, 0.12);
+    color: #fbbf24;
+    border-color: rgba(245, 158, 11, 0.3);
+}
+
+.cat-event {
+    background: rgba(236, 72, 153, 0.12);
+    color: #f472b6;
+    border-color: rgba(236, 72, 153, 0.3);
+}
+
+.cat-tool {
+    background: rgba(99, 102, 241, 0.12);
+    color: #a5b4fc;
+    border-color: rgba(99, 102, 241, 0.25);
+}
+
+.cat-other {
+    background: rgba(148, 163, 184, 0.1);
+    color: #94a3b8;
+    border-color: rgba(148, 163, 184, 0.2);
+}
+
+.chat-message p {
+    margin: 0 0 0.5rem;
+}
+
+.chat-message p:last-child {
+    margin-bottom: 0;
+}
+
+.chat-message code {
+    background: rgba(99, 102, 241, 0.12);
+    color: #a5b4fc;
+    padding: 1px 5px;
+    border-radius: 3px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8em;
+}
+
+@keyframes borderGlow {
+
+    0%,
+    100% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+.analyzing-border {
+    animation: borderGlow 1.5s ease-in-out infinite;
+    border-color: #6366f1 !important;
+    box-shadow: 0 0 0 1px rgba(99, 102, 241, 0.3), inset 0 0 20px rgba(99, 102, 241, 0.04);
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+.cursor-blink {
+    display: inline-block;
+    width: 2px;
+    height: 1em;
+    background: #6366f1;
+    margin-left: 1px;
+    vertical-align: text-bottom;
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.3s ease-out;
+}
+
+.animate-slide-up {
+    animation: slideUp 0.3s ease-out;
+}
